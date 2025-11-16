@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD ZIZAH! 🎉</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="background-music" loop autoplay>
+        <source src="/Happy Birthday to You - piano instrumental with lyrics.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <div class="container">
+        <header>
+            <h1>Untuk Andi Azizah, seseorang teman yang ku anggap sebagai sepupu dekatku.</h1>
+        </header>
+        
+        <section class="main-message">
+            <p class="intro">Pada 17 November 2025, 00:00, saya ingin mengucapkan...</p>
+            <h2 class="hbd-text">Selamat Ulang Tahun!</h2>
+            <p>ke 18 tahun</p>
+            <img src="/IMG_20251116_212647.jpg" alt="Foto Ulang Tahun Spesial" class="birthday-image">
+            
+            <p class="wish-text">Semoga setiap langkahmu dipenuhi kebahagiaan, tawa, dan semua impian terbaikmu menjadi nyata. Teruslah melangkah walau banyak yang menghalangi, banggakan orang tuamu dan buktikan kepada mereka semua yang merendahkanmu, bahwa kau selalu sanggup berdiri dan terus berjuang walau jatuh berulang kali. Selamat ulang tahun dan semangat meraih mimpi.</p>
+
+            <div class="signature">
+                <p class="sender-namex">Dari seseorang yang selalu peduli dengan kebaikanmu</p>
+                <p class="sender-name">M. Rezky Dwi Eka Novianto [Rekamansyah / Azizsyah]</p>
+            </div>
+        </section>
+
+        <section class="notes">
+            <p>Ada hadiah kecilku untuk kau, harap harap berguna untuk PKL. 🎁</p>
+            <a href="microsoft.html" target="_blank" class="gift-button">Buka Sekarang</a>
+        </section>
+    </div>
+    <script>
+        const music = document.getElementById('background-music');
+        const toggleMusicButton = document.getElementById('toggle-music');
+
+        let isMusicPlaying = false;
+        
+        // Coba putar otomatis saat halaman dimuat
+        window.onload = function() {
+            music.play().then(() => {
+                isMusicPlaying = true;
+                toggleMusicButton.textContent = '⏸'; // Tanda Pause
+            }).catch(e => {
+                // Jika autoplay diblokir, tampilkan tombol play
+                toggleMusicButton.style.display = 'block';
+                toggleMusicButton.textContent = '▶️'; // Tanda Play
+            });
+        };
+
+        // Fungsi tombol play/pause manual
+        toggleMusicButton.addEventListener('click', function() {
+            if (music.paused) {
+                music.play();
+                toggleMusicButton.textContent = '⏸';
+            } else {
+                music.pause();
+                toggleMusicButton.textContent = '▶️';
+            }
+        });
+    </script>
+</body>
+</html>
